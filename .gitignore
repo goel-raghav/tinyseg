@@ -1,0 +1,55 @@
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environment
+.venv/
+.env
+.env.*
+!.env.example
+
+# Training data: keep folder/docs, ignore actual datasets
+/data/**
+!/data/
+!/data/.gitkeep
+!/data/README.md
+!/data/placeholder.txt
+
+# Logs: keep folder/docs, ignore generated logs
+/logs/**
+!/logs/
+!/logs/.gitkeep
+!/logs/README.md
+!/logs/placeholder.txt
+*.log
+
+# Notebooks
+notebooks/.ipynb_checkpoints/
+
+# ML checkpoints, weights, and exported models
+/checkpoints/
+/weights/
+/exports/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.tflite
+*.engine
+
+# Experiment outputs
+/runs/
+/wandb/
+/mlruns/
+/lightning_logs/
+
+# Generated arrays / serialized training artifacts
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.joblib
