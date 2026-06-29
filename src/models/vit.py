@@ -46,7 +46,7 @@ class ViT(nn.Module):
         self.pos_embed = nn.Parameter(
             torch.zeros(1, self.patch_embed.num_patches, config.d_model)
         )
-        self.transformer = nn.ModuleList(
+        self.encoder_blocks = nn.ModuleList(
             [
                 TransformerBlock(
                     config.d_model,
@@ -63,7 +63,7 @@ class ViT(nn.Module):
     def forward(self, x):
         x = self.patch_embed(x)
         x = x + self.pos_embed
-        for block in self.transformer:
+        for block in self.encoder_blocks:
             x = block(x)
         x = self.norm(x)
         return x
